@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+import argparse
+
+def get_opt():
+    parser=argparse.ArgumentParser()
+    args=parser.parse_args()
+    return(args)
+
+
+if __name__=='__main__':
+    args=get_opt()

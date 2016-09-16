@@ -1,0 +1,28 @@
+This is the order of how to run the files:
+
+1. sort_images_by_filter.py
+You might want to consider sorting the images by filter, difference imaging makes a lot o sense if the images are taken in the same wave range. It is also recomended to use as it sets the FILTER keyword if not existing. It creates directories with the given filter and moves the images into them
+
+2. Tweakreg.py
+Aligns images to catalogue
+
+(3. Astrodrizzle.py)
+Dont use this
+
+4. FCNUM.py -survey VALUE
+Sets FCNUM value and SURVEY value if given. If you run it with -f it doesnt care about the SURVEY value, but as it is used in the pipeline (rename_...pl) it is recommended to use it, it can be also added by add_keyword SURVEY [value] 
+
+5. rename_jhein.pl / rename_jhein_ACS.pl 
+moves from current directory to cdraw
+
+6. DIFFVAL.py
+7.
+    0) Pipe init: 
+        Pipeline stages FINDNEWIM, CPFIX
+    a) mkfieldfile4swarp.pl, after stage CPFIX, necessary for SWARP
+    b) Pipeline
+    
+There is also __main__.py for those people who run python on the directory 
+add_keyword.py [NAME] [Value] [-dir] [-pattern]
+sort_images_by_keyword [keyword]
+modules.py including the rainbowcolorcode ©, modules and classes for convinience used throughout the scripts
